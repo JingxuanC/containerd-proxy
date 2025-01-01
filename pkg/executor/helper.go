@@ -141,3 +141,13 @@ func criCgroupParent(config *runtimeapi.PodSandboxConfig) string {
 
 	return config.Linux.CgroupParent
 }
+
+func MergeLables(a, b map[string]string) map[string]string {
+	if a == nil {
+		a = make(map[string]string)
+	}
+	for k, v := range b {
+		a[k] = v
+	}
+	return a
+}

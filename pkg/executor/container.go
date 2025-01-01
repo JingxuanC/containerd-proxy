@@ -76,6 +76,10 @@ func (c *ContainerExecuotor) ParseRequest(req interface{}) (string, error) {
 	return "", nil
 }
 
+// The `LoadContainerInfo` method in the `ContainerExecuotor` struct is used to load container
+// information from the store based on the provided `containerId` and `stage`. Here's a breakdown of
+// what the method does:
+
 func (c *ContainerExecuotor) LoadContainerInfo(containerId, stage string) error {
 	containerCheckPoint := c.store.GetContainerInfo(containerId)
 

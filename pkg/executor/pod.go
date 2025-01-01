@@ -93,6 +93,10 @@ func (p *PodExecutor) DeleteCheckpointForce(id string) {
 	klog.Infof(" delete pod(%v/%v) checkpoint", p.GetPodMeta().GetName(), p.GetPodMeta().Uid)
 	p.store.DeletePodSandboxInfo(id)
 }
+
+// This `UpdateRequest` method in the `PodExecutor` struct is responsible for updating the pod executor
+// based on the response received from a hook and the original request. Here's a breakdown of what it
+// does:
 func (p *PodExecutor) UpdateRequest(response interface{}, request interface{}) error {
 	resp, ok := response.(*v1.PodSandboxHookResponse)
 
